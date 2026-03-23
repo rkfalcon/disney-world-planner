@@ -55,11 +55,9 @@ export function Header() {
 
         {/* Mobile Nav */}
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
+          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setOpen(true)}>
+            <Menu className="h-5 w-5" />
+          </Button>
           <SheetContent side="right" className="w-72">
             <nav className="flex flex-col gap-2 mt-8">
               {navLinks.map((link) => {
