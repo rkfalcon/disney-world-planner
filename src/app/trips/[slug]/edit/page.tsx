@@ -278,20 +278,18 @@ export default function EditTripPage() {
               )}
 
               {/* Add item button */}
-              <Dialog open={addDialogOpen && selectedDayId === day.id} onOpenChange={(open) => {
-                setAddDialogOpen(open)
-                if (open) setSelectedDayId(day.id)
-              }}>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className="w-full border-dashed gap-2"
-                    onClick={() => setSelectedDayId(day.id)}
-                  >
-                    <Plus className="h-4 w-4" />
-                    Add Activity
-                  </Button>
-                </DialogTrigger>
+              <Button
+                variant="outline"
+                className="w-full border-dashed gap-2"
+                onClick={() => {
+                  setSelectedDayId(day.id)
+                  setAddDialogOpen(true)
+                }}
+              >
+                <Plus className="h-4 w-4" />
+                Add Activity
+              </Button>
+              <Dialog open={addDialogOpen && selectedDayId === day.id} onOpenChange={setAddDialogOpen}>
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle>Add Activity to Day {index + 1}</DialogTitle>
