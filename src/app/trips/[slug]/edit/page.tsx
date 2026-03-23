@@ -314,7 +314,7 @@ export default function EditTripPage() {
                     {(newItem.type === 'attraction' || newItem.type === 'dining') && (
                       <div className="space-y-2">
                         <Label>Select Attraction</Label>
-                        <Select value={newItem.attraction_id} onValueChange={(val) => setNewItem(prev => ({ ...prev, attraction_id: val }))}>
+                        <Select value={newItem.attraction_id} onValueChange={(val) => setNewItem(prev => ({ ...prev, attraction_id: val ?? '' }))}>
                           <SelectTrigger>
                             <SelectValue placeholder="Choose an attraction..." />
                           </SelectTrigger>
