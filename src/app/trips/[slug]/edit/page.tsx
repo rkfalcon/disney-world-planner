@@ -217,7 +217,7 @@ export default function EditTripPage() {
                 <div className="flex items-center gap-2">
                   <Select
                     value={day.park_id || 'none'}
-                    onValueChange={(val: string) => handleParkChange(day.id, val)}
+                    onValueChange={(val) => handleParkChange(day.id, val ?? 'none')}
                   >
                     <SelectTrigger className="w-[200px]">
                       <div className="flex items-center gap-2">
